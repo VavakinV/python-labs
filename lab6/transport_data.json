@@ -1,0 +1,117 @@
+{
+    "vehicles": [
+        {
+            "id": 1,
+            "type": "Автомобиль",
+            "model": "Camry",
+            "brand": "Toyota",
+            "year": 2020,
+            "reg_number": "А123ВС77"
+        },
+        {
+            "id": 2,
+            "type": "Автобус",
+            "model": "Sprinter",
+            "brand": "Mercedes-Benz",
+            "year": 2018,
+            "reg_number": "М456ОР99"
+        },
+        {
+            "id": 3,
+            "type": "Мотоцикл",
+            "model": "CBR600RR",
+            "brand": "Honda",
+            "year": 2022,
+            "reg_number": "К789ЕХ77"
+        },
+        {
+            "id": 4,
+            "type": "Автомобиль",
+            "model": "Civic",
+            "brand": "Honda",
+            "year": 2010,
+            "reg_number": "Х592АХ23"
+        },
+        {
+            "id": 5,
+            "type": "Автомобиль",
+            "model": "GT",
+            "brand": "Ford",
+            "year": 2001,
+            "reg_number": "А829КУ99"
+        },
+        {
+            "id": 6,
+            "type": "Автомобиль",
+            "model": "Focus",
+            "brand": "Ford",
+            "year": 2012,
+            "reg_number": "Б345МН23"
+        }
+    ],
+    "drivers": [
+        {
+            "id": 1,
+            "first_name": "Иван",
+            "last_name": "Петров",
+            "license_number": "77ВУ123456",
+            "birth_date": "1985-05-20",
+            "experience": 15
+        },
+        {
+            "id": 2,
+            "first_name": "Алексей",
+            "last_name": "Сидоров",
+            "license_number": "99АР789012",
+            "birth_date": "1990-11-15",
+            "experience": 10
+        },
+        {
+            "id": 3,
+            "first_name": "Ольга",
+            "last_name": "Иванова",
+            "license_number": "50СР345678",
+            "birth_date": "1995-03-10",
+            "experience": 7
+        },
+        {
+            "id": 5,
+            "first_name": "Василий",
+            "last_name": "Иванов",
+            "license_number": "24ОР209384",
+            "birth_date": "1990-03-15",
+            "experience": 5
+        },
+        {
+            "id": 6,
+            "first_name": "Артём",
+            "last_name": "Воробьёв",
+            "license_number": "83ЫВ458233",
+            "birth_date": "2004-09-25",
+            "experience": 1
+        }
+    ],
+    "assignments": [
+        {
+            "id": 1,
+            "vehicle_id": 1,
+            "driver_id": 1,
+            "assign_date": "2024-12-01",
+            "return_date": "2024-12-05"
+        },
+        {
+            "id": 2,
+            "vehicle_id": 2,
+            "driver_id": 2,
+            "assign_date": "2024-12-02",
+            "return_date": null
+        },
+        {
+            "id": 3,
+            "vehicle_id": 3,
+            "driver_id": 3,
+            "assign_date": "2024-12-03",
+            "return_date": "2024-12-04"
+        }
+    ]
+}
