@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Подтверждение удаления транспортного средства</title>
+</head>
+<body class="delete-vehicle-confirmation">
+    <h1>Вы действительно хотите удалить транспортное средство?</h1>
+
+    <p>Вы собираетесь удалить транспортное средство {{ vehicle }}. Это действие невозможно отменить.</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="confirm-delete">Удалить</button>
+    </form>
+
+    <br>
+    <a href="{% url 'vehicles' %}">
+        <button>Отмена</button>
+    </a>
+</body>
+</html>

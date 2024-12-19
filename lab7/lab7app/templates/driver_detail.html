@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Детали водителя</title>
+</head>
+<body class="driver-detail">
+    <h1>Детали водителя</h1>
+    
+    <div class="driver-info">
+        <p><strong>Имя:</strong> {{ driver.first_name }}</p>
+        <p><strong>Фамилия:</strong> {{ driver.last_name }}</p>
+        <p><strong>Номер водительского удостоверения:</strong> {{ driver.license_number }}</p>
+        <p><strong>Дата рождения:</strong> {{ driver.birth_date }}</p>
+        <p><strong>Стаж вождения:</strong> {{ driver.driving_experience }} лет</p>
+    </div>
+
+    <br>
+    <a href="{% url 'edit_driver' driver.driver_id %}">
+        <button>Изменить</button>
+    </a>
+    <a href="{% url 'drivers' %}">
+        <button>Назад к водителям</button>
+    </a>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ record }}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Details of {{ model_name|title }}</h1>
+        <a href="/{{ model_name }}s/" class="btn-back">Back to {{ model_name|title }}s</a>
+    </header>
+    <div class="container">
+        <h2>{{ record }}</h2>
+        <ul>
+            {% if model_name == 'vehicle' %}
+                <li><strong>Type:</strong> {{ record.type }}</li>
+                <li><strong>Model:</strong> {{ record.model }}</li>
+                <li><strong>Brand:</strong> {{ record.brand }}</li>
+                <li><strong>Manufacture Year:</strong> {{ record.manufacture_year }}</li>
+                <li><strong>Registration Number:</strong> {{ record.registration_number }}</li>
+            {% elif model_name == 'driver' %}
+                <li><strong>First Name:</strong> {{ record.first_name }}</li>
+                <li><strong>Last Name:</strong> {{ record.last_name }}</li>
+                <li><strong>License Number:</strong> {{ record.license_number }}</li>
+                <li><strong>Birth Date:</strong> {{ record.birth_date }}</li>
+                <li><strong>Driving Experience:</strong> {{ record.driving_experience }}</li>
+            {% elif model_name == 'assignment' %}
+                <li><strong>Vehicle:</strong> {{ record.vehicle }}</li>
+                <li><strong>Driver:</strong> {{ record.driver }}</li>
+                <li><strong>Assignment Date:</strong> {{ record.assignment_date }}</li>
+                <li><strong>Return Date:</strong> {{ record.return_date }}</li>
+            {% endif %}
+        </ul>
+
+        <a href="{% url 'edit_' model_name model_name=model_name|add:"_detail" %}">Edit</a>
+        <a href="{% url 'delete_' model_name model_name=model_name|add:"_detail" %}">Delete</a>
+    </div>
+</body>
+</html>

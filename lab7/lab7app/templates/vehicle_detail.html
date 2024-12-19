@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Детали транспортного средства</title>
+</head>
+<body class="vehicle-detail">
+    <h1>Детали транспортного средства</h1>
+    
+    <div class="vehicle-info">
+        <p><strong>Марка:</strong> {{ vehicle.brand }}</p>
+        <p><strong>Модель:</strong> {{ vehicle.model }}</p>
+        <p><strong>Год выпуска:</strong> {{ vehicle.manufacture_year }}</p>
+        <p><strong>Номер регистрации:</strong> {{ vehicle.registration_number }}</p>
+        <p><strong>Тип:</strong> {{ vehicle.type }}</p>
+    </div>
+
+    <br>
+    <a href="{% url 'edit_vehicle' vehicle.vehicle_id %}">
+        <button>Изменить</button>
+    </a>
+    <a href="{% url 'vehicles' %}">
+        <button>Назад к транспортным средствам</button>
+    </a>
+</body>
+</html>

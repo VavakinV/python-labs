@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Детали назначения транспортного средства</title>
+</head>
+<body class="vehicle-assignment-detail">
+    <h1>Детали назначения транспортного средства</h1>
+    
+    <div class="assignment-info">
+        <p><strong>Транспортное средство:</strong> {{ assignment.vehicle }}</p>
+        <p><strong>Водитель:</strong> {{ assignment.driver }}</p>
+        <p><strong>Дата назначения:</strong> {{ assignment.assignment_date }}</p>
+        <p><strong>Дата возврата:</strong> {{ assignment.return_date }}</p>
+    </div>
+
+    <br>
+    <a href="{% url 'edit_assignment' assignment.assignment_id %}">
+        <button>Изменить</button>
+    </a>
+    <a href="{% url 'assignments' %}">
+        <button>Назад к назначениям</button>
+    </a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Транспорт</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body class="home">
+    <header>
+        <h1>Транспорт</h1>
+    </header>
+    <div class="container">
+        <button onclick="window.location.href='/drivers/'">Водители</button>
+        <button onclick="window.location.href='/vehicles/'">Транспорт</button>
+        <button onclick="window.location.href='/assignments/'">Назначения</button>
+    </div>
+</body>
+</html>

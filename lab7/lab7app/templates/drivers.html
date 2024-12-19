@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Водители</title>
+</head>
+<body class="drivers">
+    <h1>Список водителей</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Номер</th>
+                <th>Имя</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for driver in drivers %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ driver }}</td>
+                <td>
+                    <a href="{% url 'driver_detail' driver.driver_id %}">
+                        <button>Подробно</button>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+
+    <a href="{% url 'add_driver' %}">
+        <button>Добавить нового водителя</button>
+    </a>
+    <a href="{% url 'home' %}">
+        <button>Назад на главную</button>
+    </a>
+
+</body>
+</html>
