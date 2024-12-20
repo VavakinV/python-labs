@@ -142,13 +142,11 @@ def assignment_detail(request, assignment_id):
 
 def edit_assignment(request, assignment_id):
     assignment = get_object_or_404(VehicleAssignment, assignment_id=assignment_id)
-    vehicles = Vehicle.objects.all()  # Все транспортные средства
-    drivers = Driver.objects.all()    # Все водители
 
     if request.method == 'POST':
         # Получаем данные из формы
-        vehicle_id = request.POST.get('vehicle')
-        driver_id = request.POST.get('driver')
+        vehicle_id = request.POST.get('vehicle_id')
+        driver_id = request.POST.get('driver_id')
         assignment_date = request.POST.get('assignment_date')
         return_date = request.POST.get('return_date')
 
@@ -165,8 +163,6 @@ def edit_assignment(request, assignment_id):
     # Отображаем форму
     return render(request, 'edit_assignment.html', {
         'assignment': assignment,
-        'vehicles': vehicles,
-        'drivers': drivers,
     })
 
 

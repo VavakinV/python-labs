@@ -16,6 +16,7 @@
                 <th>Транспортное средство</th>
                 <th>Водитель</th>
                 <th>Дата назначения</th>
+                <th>Дата возврата</th>
                 <th>Действия</th>
             </tr>
         </thead>
@@ -25,7 +26,12 @@
                 <td>{{ forloop.counter }}</td>
                 <td>{{ assignment.vehicle }}</td>
                 <td>{{ assignment.driver }}</td>
-                <td>{{ assignment.assigned_date }}</td>
+                <td>{{ assignment.assignment_date }}</td>
+                <td>{% if assignment.return_date %}
+                    {{ assignment.return_date }}
+                    {% else %}
+                        Возврата не было
+                    {% endif %}
                 <td>
                     <a href="{% url 'assignment_detail' assignment.assignment_id %}">
                         <button>Подробно</button>
